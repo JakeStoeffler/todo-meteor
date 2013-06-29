@@ -1,0 +1,4 @@
+/* CSS declarations go here */
+tr.done {
+  opacity: 0.3;
+}

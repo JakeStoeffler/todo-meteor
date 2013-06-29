@@ -1,0 +1,28 @@
+<head>
+  <title>todo</title>
+</head>
+
+<body>
+    <div style="padding: 10px;">
+        {{> list}}
+    </div>
+</body>
+
+<template name="list">
+    <h1>Todo List</h1>
+    <form id="todo-form">
+        <input id="todo-title" type="text" placeholder="New todo..." required="required" />
+        <button id="add-todo" class="btn btn-primary" type="submit">Add</button>
+    </form>
+    <table class="table table-bordered table-hover table-striped" style="width: auto;">
+    <tbody>
+    {{#each todos}}
+        <tr data-id="{{_id}}"{{#if done}} class="done"{{/if}}>
+            <td>{{title}}</td>
+            <td><button class="done-todo btn btn-success btn-mini{{#if done}} disabled{{/if}}">Done</button></td>
+            <td><button class="del-todo btn btn-danger btn-mini">Delete</button></td>
+        </tr>
+    {{/each}}
+    </tbody>
+    </table>
+</template>
